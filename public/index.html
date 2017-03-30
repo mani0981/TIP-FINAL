@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <title>Admin user panel</title>
+
+    <!-- CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="css/bootstrap-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- custom styles -->
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/BookingCtrl.js"></script>
+    <script src="js/controllers/MovieCtrl.js"></script>
+    <script src="js/controllers/cityCtrl.js"></script>
+    <script src="js/controllers/TheatreCtrl.js"></script>
+	  <script src="js/controllers/ShowtimeCtrl.js"></script>
+    <script src="js/controllers/MappingCtrl.js"></script>
+    <script src="js/controllers/DetailsCtrl.js"></script>
+    <script src="js/controllers/seatsCtrl.js"></script>
+    <script src="js/controllers/LoginCtrl.js"></script>
+    <script src="js/controllers/logoutCtrl.js"></script>
+    <script src="js/controllers/RegisterCtrl.js"></script>
+    <script src="js/controllers/paymentCtrl.js"></script>
+    <script src="js/controllers/lastCtrl.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+
+      <body ng-app="sampleApp">
+
+
+
+         <!-- HEADER -->
+   
+        <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/"><img src="images/tip-logo.png"></a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                  
+                                        
+                   
+
+
+                      <li ng-show = "currentUser"><a href="/login" ng-click="logout()"> Logout</a></li>
+                          <li><a href="/login"> Log-in</a></li>
+                          <li><a href="/register">Signup</a></li>
+
+
+                          <li class="dropdown">
+          <a href="/admin" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/movies">Movie</a></li>
+                        <li><a href="/cities">City</a></li>
+                        <li><a href="/theatre">Theatre</a></li>
+                        <li><a href="/showtime">ShowTiming</a></li>
+                        <li><a href="/mapping">Mapping</a></li>
+           
+          </ul>
+        </li>
+      </ul>                     
+                </ul>
+                
+            </div>
+            </nav>
+        </header>
+  
+        
+      
+      <div ng-view></div>
+    
+</body>
+
+</html>

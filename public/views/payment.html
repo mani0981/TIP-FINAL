@@ -1,0 +1,46 @@
+<br><br><br><br>
+<div class="container">
+  <div class="col-xs-4">
+    <h1>Booking Summary</h1>
+<div>
+<div ng-repeat="j in movi">
+    <h4>Movie Title - {{j.moviTitle}}</h4>
+    <h5>Language - {{j.moviLanguage}}</h5>
+
+</div>
+<div>
+    <h5 id="cityName"></h5>
+    <h5 id="thr"></h5>
+    <h5 id="tim">  </h5>
+      </div>
+
+  <div class="">
+     <span> Seat Number:  <h5 id="tkt"> </h5></span>
+     <span> Ticket Price: <h5 id="cls"> </h5></span>
+     <span> Total Amount: <h5 id="amt"></h5></span>
+  </div>
+</div>
+</div>
+<br>
+<div class="">
+  <div class="col-xs-8">
+    <h1>Pay Now!</h1>
+    <div>
+        <center>
+          <form name="Form">
+            <table class="table table-bordered table-hover">
+
+                        <tr><th><br>Card Holder's Name:</th><td><br><input ng-model="payment.name" style="width:200px" required/></td></tr>
+
+                        <tr><th><br>Card Number:</th><td><br><input ng-model="payment.number" style="width:200px" required/></td></tr>
+
+												<tr><th><br>Card CVV:</th><td><br><input ng-model="payment.cvv"style="width:200px" required /></td></tr>
+
+                   <tr><td><br><a href="/last" ng-click="addPayment()" class="btn btn btn-primary">Pay Now</a></td></tr>
+
+            </table>
+          </form>
+        </center>
+    </div>
+</div>
+</div>

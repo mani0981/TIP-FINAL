@@ -1,0 +1,38 @@
+
+<div class="container text-center">
+    <h1>Book Theatre</h1>
+    <p>Book Theatre For Movie Show...</p>
+    <div>
+        <center>
+          <form name="Form">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Theatre Name</th>
+                        <th>City Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input ng-model="theat.theatTitle" required/></td>
+                      
+                        <td><select ng-model="theat.theatcity">
+                            <option ng-repeat="c in citiList">
+                              {{c.citiTitle}}
+                            </option></select></td>
+
+
+                        <td><button ng-click="addTheatre(theat)" class="btn btn-primary">Add </button></td>
+                        <td><button ng-click="updateTheatre(theat)" class="btn btn-primary">Update</button></td>
+                    </tr>
+                    <tr ng-repeat=" theat in theatList">
+                        <td>{{theat.theatTitle}}</td>
+                        <td>{{theat.theatcity}}</td>
+                        <td><button ng-click="removeTheatre(theat)" class="btn btn-danger">Delete  </button></td>
+                        <td><button ng-click="editTheatre(theat)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+          </form>
+        </center>
+    </div>

@@ -1,0 +1,32 @@
+<div class="container text-center">
+    <h1>Select your city</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+          <form name="Form">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>City Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input ng-model="city.citiTitle" required/></td>
+                      
+                        <td><button ng-click="addCity()" class="btn btn-primary">Add </button></td>
+                        <td><button ng-click="updateCity(citi)" class="btn btn-primary">Update</button></td>
+                    </tr>
+                    <tr ng-repeat=" citi in citiList">
+                        <td>{{citi.citiTitle}}</td>
+                        <td><button ng-click="removeCity(citi)" class="btn btn-danger">Delete  <span class="glyphicon glyphicon-remove"></span></button></td>
+                        <td><button ng-click="editCity(citi)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+          </form>
+        </center>
+    </div>

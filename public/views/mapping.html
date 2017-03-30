@@ -1,0 +1,87 @@
+<div class="container">
+ <br/><br/><br/>
+ <div class="row">
+   <div class="col-lg-12">
+     <h1 class="text-center">Admin Panel: Enter All Details.</h1>
+   </div>
+ <div class="col-lg-12">
+   <form name="Form">
+   <table height="100%" width="100%" class="table jumbotron table-condensed table-bordered">
+     <tr><td>
+   MOVIE NAME
+ </td>
+ <td colspan="2">
+   <div>
+<select ng-model="map.mapMovie">
+  <option ng-repeat="movi in moviList" value="{{movi.moviTitle}}">{{movi.moviTitle}}</option>
+</select>
+</div>
+ </td></tr>
+   <tr><td>
+   CITY
+ </td>
+ <td colspan="2">
+   <select ng-model="map.mapCity">
+       <option ng-repeat="citi in citiList">{{citi.citiTitle}}</option>
+   </select>
+ </td></tr>
+<tr><td>
+   THEATRE
+ </td>
+ <td colspan="2">
+<select ng-model="map.mapTheatre">
+ <option  ng-repeat="theat in theatList | filter: map.mapCity">{{theat.theatTitle}}</option>
+</select>
+</td></tr>
+<tr><td>
+   SHOWTIMING
+ </td>
+ <td colspan="2">
+<select ng-model="map.mapShowtime">
+ <option  ng-repeat="st in stList">{{st.showtimeTime | date:'h:mm:ss a'}}</option>
+</select>
+</td>
+</tr>
+ <td>DATE</td>
+ <td colspan="2"><input ng-model="map.fromDate" type="Date" required/></td>
+
+ <!--<td>TO</td>
+ <td colspan="2"><input ng-model="map.toDate" type="Date" required/></td>-->
+<td> <button ng-click="addMapping()" class="btn btn-primary">Add </button></td>
+</tr>
+
+</table>
+</form>
+ </div>
+</div>
+<div class="row">
+ <div class="col-xs-12" style="height:30px"></div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+
+</div>
+</div>
+
+ <div class="col-lg-12">
+   <table class="table table-bordered table-hover">
+     <tr>
+       <th>TITLE</th>
+       <th>CITY</th>
+       <th>THEATRE</th>
+       <th>SHOWTIMINGS</th>
+       <th>DATE</th>
+       <th>DELETE</th>
+     </tr>
+       <tr ng-repeat="map in mapList">
+         <td>{{map.mapMovie}}</td>
+         <td>{{map.mapCity}}</td>
+         <td>{{map.mapTheatre}}</td>
+         <td>{{map.mapShowtime}}</td>
+         <td>{{map.fromDate | date:'fullDate'}}</td>
+         <td><button ng-click="removeMapping(map)" class="btn btn-danger">DELETE  </button></td>
+       </tr>
+     </table>
+   </div>
+ </div>
+</div>

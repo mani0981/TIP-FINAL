@@ -1,0 +1,32 @@
+<br><br><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="">
+
+      <div ng-repeat="j in movi">
+        <img ng-src="{{j.moviPoster}}" alt="POSTER"  width="200" height="200">
+        <h4>Movie Title - {{j.moviTitle}}</h4>
+        <h5>Language - {{j.moviLanguage}}</h5>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+      <div class="col-xs-6 ">
+        <div class="">
+          <h1>Booking Summary</h1>
+        <span> Seat Number:  <h5 id="tkt"> </h5></span>
+        <span> Ticket Price: <h5 id="cls"> </h5></span>
+        <span> Total Amount: <h5 id="amt"></h5></span>
+      </div>
+      </div>
+    </div>
+  </div>
+<div>
+  <h1>Your Movie booked Successfully...</h1>
+</div>
+<br>
+<br>

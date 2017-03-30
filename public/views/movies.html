@@ -1,0 +1,56 @@
+
+<div class="container text-center">
+    <h1>Movie Booking</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+          <form name="Form">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Movie ID</th>
+                        <th>Year</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input ng-model="name" required/></td>
+                          <td><input ng-model="year" required/></td>
+                      <td><button ng-click="searchMovie()" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> SEARCH MOVIE</button></td>
+                     <td><button ng-click="addMovie(movi)" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add </button></td>
+                    </tr>
+
+                        <tr>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Genre</th>
+                        <th>Director</th>
+                        <th>Actors</th>
+                        <th>Language</th>
+                        </tr>
+                   <tr>
+                         <td>  {{movi.Title}}</td>
+                         <td>  {{movi.Year}}</td>
+                         <td>  {{movi.Genre}}</td>
+                         <td>  {{movi.Director}}</td>
+                         <td>  {{movi.Actors}}</td>
+                         <td>  {{movi.Language}}</td>
+                    </tr>
+                    <tr ng-repeat=" movi in moviList">
+                      <td>  {{movi.moviTitle}}</td>
+                      <td>  {{movi.moviyear}}</td>
+                      <td>  {{movi.moviGenre}}</td>
+                      <td>  {{movi.moviDirector}}</td>
+                      <td>  {{movi.moviActors}}</td>
+                      <td>  {{movi.moviLanguage}}</td>
+                      <td><button ng-click="removeMovie(movi)" class="btn btn-danger">Delete  </button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+          </form>
+        </center>
+    </div>

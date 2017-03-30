@@ -1,0 +1,46 @@
+<div class="accordion">
+  <ul>
+    <li ng-repeat=" movi in moviList | limitTo: 5" ng-style="{'background-image':'url({{movi.moviPoster}})'}">
+      <div> <a href="#">
+        <h2>{{movi.moviTitle}}</h2>
+        <p>{{movi.moviPlot}}</p>
+        </a> </div>
+    </li>
+     
+  </ul>
+</div>
+
+    <div class=" container movieBlock" >
+  
+   
+    <div class="row">
+
+       
+
+ <p class="search-movie"><input type="text" placeholder="Search Movie"  ng-model="test"></p>
+
+
+
+      <div class="col-sm-6 col-md-4"  ng-repeat=" movi in moviList  | filter:test ">
+        <div class="thumbnail">
+          <img src="{{movi.moviPoster}}" />
+          <div class="caption col-lg-7">
+            <h3 >{{movi.moviTitle}}</h3>
+
+            <p>{{movi.moviGenre}}</p>
+            <p class="actor">{{movi.moviActors}}</p>
+            
+ 
+
+            <a type="button" ng-click="setMovie(movi.moviTitle)" class="btn-link btn" >BOOK NOW</a>
+          </div>
+          <div style="clear:both"></div>
+        </div>
+      </div>
+    </div>
+
+    
+    
+</div>
+
+
